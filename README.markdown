@@ -11,7 +11,7 @@ You can download a pre-built binary from here:
 ## Usage
 
  1. Drag a PDF file onto the window to view it.
- 2. Send OSC messages to control which page is displayed. Use this format:
+ 2. Send OSC messages to port 60000. You can control which page is displayed using this OSC format:
 
 /goto/page/number
 
