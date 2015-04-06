@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  QPDFView.h
 //  QView
 //
 //  Created by Chris Ashworth on 4/6/15.
@@ -24,12 +24,9 @@
 //  THE SOFTWARE.
 //
 
-#import <Cocoa/Cocoa.h>
-#import "F53OSC.h"
+//#import <PDFKit/PDFKit.h>
+#import <Quartz/Quartz.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, F53OSCPacketDestination>
-
-- (void) takeMessage:(F53OSCMessage *)message;
+@interface QPDFView : PDFView
 
 @end
-

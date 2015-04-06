@@ -1,0 +1,3 @@
+[submodule "F53/F53OSC"]
+	path = F53/F53OSC
+	url = git@github.com:Figure53/F53OSC.git
