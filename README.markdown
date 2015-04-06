@@ -13,7 +13,7 @@ You can download a pre-built binary from here:
  1. Drag a PDF file onto the window to view it.
  2. Send OSC messages to control which page is displayed. Use this format:
 
- ```/goto/page/number```
+/goto/page/number
 
 ## Why does this exist
 
