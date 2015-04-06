@@ -2,7 +2,11 @@
 
 QView is an experimental little PDF Viewer that can be controlled via OSC, slung together in a few minutes as a proof of concept.
 
-You can download a pre-built binary from here: [http://figure53.com/downloads/QView.zip](http://figure53.com/downloads/QView.zip)
+## Download
+
+You can download a pre-built binary from here:
+
+[http://figure53.com/downloads/QView.zip](http://figure53.com/downloads/QView.zip)
 
 ## Usage
 
