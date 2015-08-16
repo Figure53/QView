@@ -92,17 +92,37 @@
     
     if ( [[[addressParts firstObject] lowercaseString] isEqualToString:@"goto"] )
     {
-        if ( addressParts.count < 3 )
+        if ( addressParts.count < 2 )
             return;
+        
+        if ( [[[addressParts objectAtIndex:1] lowercaseString] isEqualToString:@"next"] )
+        {
+            [self performSelectorOnMainThread:@selector(goForward:) withObject:message waitUntilDone:NO];
+        }
+        
+        if ( [[[addressParts objectAtIndex:1] lowercaseString] isEqualToString:@"prev"] )
+        {
+            [self performSelectorOnMainThread:@selector(goBack:) withObject:message waitUntilDone:NO];
+        }
         
         if ( [[[addressParts objectAtIndex:1] lowercaseString] isEqualToString:@"page"] )
         {
             NSString *pageString = [addressParts objectAtIndex:2];
             NSInteger pageNumber = [pageString integerValue];
-
+            
             [self.pdfView goToPage:[self.pdfView.document pageAtIndex:pageNumber - 1]];
         }
     }
+}
+
+- (void) goForward:(id)sender
+{
+    [self.pdfView goToNextPage:sender];
+}
+
+- (void) goBack:(id)sender
+{
+    [self.pdfView goToPreviousPage:sender];
 }
 
 @end
