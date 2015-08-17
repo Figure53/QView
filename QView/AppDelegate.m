@@ -97,12 +97,13 @@
         
         if ( [[[addressParts objectAtIndex:1] lowercaseString] isEqualToString:@"next"] )
         {
-            [self performSelectorOnMainThread:@selector(goForward:) withObject:message waitUntilDone:NO];
+            [self.pdfView goToNextPage:self];
         }
         
         if ( [[[addressParts objectAtIndex:1] lowercaseString] isEqualToString:@"prev"] )
         {
-            [self performSelectorOnMainThread:@selector(goBack:) withObject:message waitUntilDone:NO];
+            [self.pdfView goToPreviousPage:self];
+
         }
         
         if ( [[[addressParts objectAtIndex:1] lowercaseString] isEqualToString:@"page"] )
@@ -113,16 +114,6 @@
             [self.pdfView goToPage:[self.pdfView.document pageAtIndex:pageNumber - 1]];
         }
     }
-}
-
-- (void) goForward:(id)sender
-{
-    [self.pdfView goToNextPage:sender];
-}
-
-- (void) goBack:(id)sender
-{
-    [self.pdfView goToPreviousPage:sender];
 }
 
 @end
